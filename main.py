@@ -16,8 +16,8 @@ TG_API_HOST = ''  # 自建 API 反代地址，供网络环境无法访问时使�
 # Server酱 http://sc.ftqq.com/?c=code
 SCKEY = ''  # 这里填Server酱的key，无需推送可不填 示例: SCU646xxxxxxxxdacd6a5dc3f6
 
-# sre24 https://sre24.com/
-SRE24_TOKEN = ''  # 填sre24的token
+# 一键免费推送 https://push.jwks123.cn
+SRE24_TOKEN = ''  # 填「一键免费推送」的token
 
 PROXIES = {
     "http": "http://127.0.0.1:10808",
@@ -165,7 +165,7 @@ def server_chan():
 
 def sre24():
     msg = 'EUserv续费日志\n\n' + desp
-    url = 'https://sre24.com/api/v1/push'
+    url = 'https://push.jwks123.cn/to/'
     rs = requests.post(url, json=dict(token=SRE24_TOKEN, msg=msg)).json()
     if int(rs["code"] / 100) != 2:
         print('sre24 推送失败')
